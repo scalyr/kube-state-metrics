@@ -6,3 +6,5 @@ resources:
 - examples/standard/deployment.yaml
 - examples/standard/service-account.yaml
 - examples/standard/service.yaml
+patchesStrategicMerge:
+- examples/standard/patches/scalyr-agent-pod-annotations.yaml

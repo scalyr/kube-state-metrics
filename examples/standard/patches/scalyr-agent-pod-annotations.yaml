@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-state-metrics
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      annotations:
+        # Annotations so this pod is scrapped by the scalyr agent
+        prometheus.io/port: '8080'
+        k8s.monitor.config.scalyr.com/scrape: "true"
+        k8s.monitor.config.scalyr.com/scrape_interval: "60"
